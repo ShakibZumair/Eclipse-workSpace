@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.1" xmlns="http://Java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd">
+  <tlib-version>1.0</tlib-version>
+  <short-name>secure</short-name>
+  <uri>/WEB-INF/tlds/secure</uri>
+  <tag>
+     <name>cube</name>
+     <tag-class>com.java.tagclass.CubeNumber</tag-class>
+     <body-content>empty</body-content>
+     <attribute>
+        <name>number</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+     </attribute>
+  </tag>
+  <tag>
+     <name>secureJspTag</name>
+     <tag-class>com.java.tagclass.EmployeeDataTag</tag-class>
+     <body-content>empty</body-content>
+     
+  </tag>
+   <tag>
+     <name>dateDisplay</name>
+     <tag-class>com.java.tagclass.MyTagHandler</tag-class>
+     <body-content>empty</body-content>
+     
+  </tag>
+  <tag>
+     <name>id</name>
+     <tag-class>com.example.nikhil.tagclass.MyTagHandler</tag-class>
+     <body-content>empty</body-content>
+     
+  </tag>
+   <tag>
+     <name>secureTag</name>
+     <tag-class>com.java.tagclass.SecureJspTag</tag-class>
+     <body-content>empty</body-content>
+     <attribute>
+        <name>id</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+     </attribute>
+  </tag>
+  <!-- <tag>
+     <name>id</name>
+     <tag-class>com.example.nikhil.tagclass.MyTagHandler</tag-class>
+     <body-content>empty</body-content>
+     
+  </tag> -->
+</taglib>

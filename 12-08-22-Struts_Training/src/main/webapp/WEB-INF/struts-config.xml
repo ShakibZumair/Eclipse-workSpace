@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="RF"
+			type="com.java.form.Employee"></form-bean>
+			<form-bean name="dynaform" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="username" type="java.lang.String"></form-property>
+			<form-property name="password" type="java.lang.String"></form-property>
+			</form-bean>
+			
+<form-bean name="FH" type="com.java.form.User"/>
+
+
+	</form-beans>
+	
+
+	<global-exceptions>
+	<exception key="error.age.invalide.exception"  type="com.java.exception.AgeInvalide" 
+	handler="com.java.exception.handler.AgeInvalideHandler" path="/error.jsp"/>
+	</global-exceptions>
+
+	<global-forwards></global-forwards>
+
+
+
+	<action-mappings>
+	<!-- Previous cod for operation
+		<action path="/r" name="RF" type="com.java.action.EmployeeAction">
+			<forward name="success" path="/success.jsp" />
+		</action> -->
+	<!-- 	<action path="/reg" name="RF" type="com.java.action.EmployeeAction" validate="true"
+		input="/register.jsp" parameter="parameter">
+			<forward name="success" path="/success.jsp" />
+		</action> -->
+		  <action path="/reg" name="RF" type="com.java.action.EmployeeAction"
+		  input="/register.jsp" parameter="parameter">
+   <forward name="success" path="/success.jsp"/> </action>
+   
+		<action path="/welcome" type="com.java.action.WelcomeAction">
+		<forward name="success" path="/display.jsp"/>
+		</action>
+		<action path="/log" name="dynaform" type="com.java.action.DynaAction">
+		<forward name="success" path="/success.jsp"/>
+		</action>
+		<action path="/changelang" type="com.java.action.LangaugeChange">
+		<forward name="success" path="/register.jsp"/>
+		</action>
+		<action path="/f" name="FH"   type="com.java.action.FileUploadAction">
+            <forward name="success" path="/success.jsp" />
+        </action>
+	</action-mappings>
+
+	<message-resources parameter="application"></message-resources>
+   <plug-in className="org.apache.struts.tiles.TilesPlugin">
+        <set-property property="definitions-config"
+            value="/WEB-INF/tiles-defs.xml" />
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+   
+</struts-config> 
